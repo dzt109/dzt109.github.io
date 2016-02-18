@@ -1,0 +1,8 @@
+name: buildbio
+account: deeptrivia
+server: shinyapps.io
+bundleId: 372870
+url: https://deeptrivia.shinyapps.io/buildbio/
+when: 1455498301.91818
+asMultiple: FALSE
+asStatic: FALSE
