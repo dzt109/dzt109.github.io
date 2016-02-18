@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bio builder</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Bio builder">
+  <meta name="author" content="Deepak Trivedi">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Bio builder</h1>
+    <h2>My first Shiny App</h2>
+    <p>Deepak Trivedi<br/>Creater</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Bio builder</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Bio builder is my first Shiny App</li>
+<li>My objective here was to use as many input and output methods as possible</li>
+<li>The following slides will outline the input and output methods used</li>
+</ol>
+
+<p>The URL to the app is <a href="https://deeptrivia.shinyapps.io/buildbio/">https://deeptrivia.shinyapps.io/buildbio/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Input Methods</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here is a list of all the input methods used.</p>
+
+<ol>
+<li>textInput  - Used to input strings - Firstname and Lastname</li>
+<li>sliderInput - Slider used to input age.</li>
+<li>radioButtons - Used to input Sex</li>
+<li>fileInput - Used to upload photo</li>
+<li>selectInput - Dropdown menu used to input educational level</li>
+<li>dateInput - Used to input graduation date </li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Output Methods and Server.R</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Here is a list of all the output methods used.
+1. textOutput  - Used to output strings
+2. imageOutput - Used to output images
+3. uiOutput - Used to output a string or image dynamically based on input</p>
+
+<p>Server.R does the following:
+1. Concatenates various inputs to product output strings
+2. Processes uploaded image for uiOutput
+3. Performs time since degree calculation as shown below.</p>
+
+<pre><code class="r">todaysdate &lt;- Sys.Date()
+inputdate &lt;- as.Date(&quot;2000-05-01&quot;)
+outstring&lt;- paste(&quot;Time since degree:&quot;,as.character(as.numeric(todaysdate - inputdate)),&quot;days&quot; ,sep=&quot; &quot;)
+outstring
+</code></pre>
+
+<pre><code>## [1] &quot;Time since degree: 5767 days&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Summary</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This short app demonstrates a bunch of different input and output methods, as well as some background computations (such as an elapsed time calculation.)</p>
+
+<p>This is a very efficient way to deploy responsive apps. </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>References</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><a href="https://www.youtube.com/watch?v=HPZSunrSo5M">https://www.youtube.com/watch?v=HPZSunrSo5M</a></li>
+<li><a href="https://rpubs.com/miguelpatricio/slidify">https://rpubs.com/miguelpatricio/slidify</a></li>
+<li><a href="http://shiny.rstudio.com/articles/images.html">http://shiny.rstudio.com/articles/images.html</a></li>
+<li><a href="http://shiny.rstudio.com/reference/shiny/latest/textOutput.html">http://shiny.rstudio.com/reference/shiny/latest/textOutput.html</a></li>
+<li><a href="http://shiny.rstudio.com/articles/cheatsheet.html">http://shiny.rstudio.com/articles/cheatsheet.html</a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Bio builder'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Input Methods'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Output Methods and Server.R'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Summary'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='References'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
